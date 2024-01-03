@@ -85,7 +85,7 @@ void setup() {
 
     radio.begin();//Start the transceiver
   radio.openWritingPipe(addr);// Open the pipe for writing, choose pipe 0 be default
-  radio.setPALevel(RF24_PA_MIN); //Set power level
+  radio.setPALevel(RF24_PA_MAX); //Set power level
   radio.setChannel(108); // Set channel, choose one in 0-125, , must be identical to the receiver
   radio.setDataRate(RF24_250KBPS); //Set data transfer rate
   radio.stopListening();//Set the transceiver as the transmitter

@@ -12,7 +12,7 @@ AF_DCMotor motor4(4);
 RF24 radio(9,10); //Create a transceiver object that has CE and CSE pins at 9 and 10
 const byte addr[6]="12345";//Tranmission address, must be identical to the transmitter
 char Message[2];//Initialize a char array for storing data
-uint8_t motorSpeed[]={100,100,100,100}; // Initialize the motor speed(0-255)
+uint8_t motorSpeed[]={255,255,255,255}; // Initialize the motor speed(0-255)
 
 //-----------------Transform the command to motor control-----------
 void stopMotor(){
@@ -103,7 +103,7 @@ void setup() {
   Serial.begin(9600);//Set baud rate for virtual terminal 
   radio.begin();//Start the transceiver
   radio.openReadingPipe(1, addr);// Open pipe 1 for reading, choose pipe from 1-5 (pipe 0 is for writing)
-  radio.setPALevel(RF24_PA_MIN);// Set power level
+  radio.setPALevel(RF24_PA_MAXr;;;;;;;;;;;;;;;;;;;;;;;;;;;rfr);// Set power level
   radio.setChannel(108);//Set channel, choose one in 0-125, must be identical to the transmitter
   radio.setDataRate(RF24_250KBPS);//Set data transfer rate
   radio.startListening();//Set the transceiver as the transmitter
